@@ -1,3 +1,4 @@
+# %%
 import pandas as pd 
 import numpy as np 
 from sklearn.model_selection import GroupShuffleSplit,train_test_split
@@ -75,6 +76,8 @@ df = pd.merge(df,df_sa, on='Structures', how='left')
 df = pd.merge(df,df_vol, on='Structures', how='left')
 df = pd.merge(df,df_900, on='Structures', how='left')
 
+df = df[df['Volume [nm^3]']<20] # implicitly the case beacause of Screening_CoReMOF_Dataset.csv
+
 df['K_Xe'] = df['K_Xe_widom']
 df['K_Kr'] = df['K_Kr_widom']
 
@@ -96,6 +99,7 @@ df.replace([np.inf,-np.inf],np.nan,inplace=True)
 df = df[~(df['DISORDER']=='DISORDER')]
 print(df.shape[0])
 
+# %%
 #### RESTRICTION on non-radioactive ASR 3D-MOFs 
 df_data = df[(df['C%']>0)&(df['metal%']>0)] #MOF
 print(df_data.shape[0])
