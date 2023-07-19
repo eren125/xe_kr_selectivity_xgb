@@ -1,0 +1,2 @@
+Best parameters: {'subsample': 0.7500000000000001, 'n_estimators': 1500, 'max_depth': 6, 'learning_rate': 0.04, 'lambda': 0, 'colsample_bytree': 0.9500000000000003, 'colsample_bylevel': 0.9500000000000003, 'alpha': 1.2000000000000002}
+Lowest RMSE:  0.38159608361398967
