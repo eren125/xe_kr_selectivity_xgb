@@ -216,7 +216,7 @@ print(len(df_data))
 df_data.dropna(subset=X_columns,inplace=True)
 print(len(df_data))
 
-df_data[["Structures","unique_chemcomp"]+y_column+X_columns].to_csv("data/all.csv",index=False)
+df_data[["Structures","unique_chemcomp"]+y_column+X_columns].to_csv("data/all.csv",index=True)
 
 X, y = df_data[X_columns], df_data[y_column]
 
@@ -231,5 +231,5 @@ train_idx, test_idx = next(gss.split(X=df_data[X_columns], y=df_data[y_column], 
 train_data = df_data.reset_index().iloc[train_idx]
 test_data = df_data.reset_index().iloc[test_idx]
 
-train_data[["Structures","unique_chemcomp"]+y_column+X_columns].to_csv("data/train.csv",index=False)
-test_data[["Structures","unique_chemcomp"]+y_column+X_columns].to_csv("data/test.csv",index=False)
+train_data[["Structures","unique_chemcomp"]+y_column+X_columns].to_csv("data/train.csv",index=True)
+test_data[["Structures","unique_chemcomp"]+y_column+X_columns].to_csv("data/test.csv",index=True)

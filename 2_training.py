@@ -1,16 +1,12 @@
 # %%
 import pandas as pd 
 import numpy as np 
-from sklearn.model_selection import GroupShuffleSplit,train_test_split
+from sklearn.model_selection import train_test_split
 import xgboost as xgb
 import matplotlib.pyplot as plt
-import seaborn as sns
-import shap
 from sklearn.metrics import r2_score
 import pickle
 from xgboost import plot_importance
-import chemparse
-import math 
 
 def rmse(a,b):
     return np.sqrt( np.mean ((a-b)**2) )
@@ -22,12 +18,13 @@ random_state = 123
 # %%
 # import training data
 df_train = pd.read_csv('data/train.csv')
-X_train, y_train, group = df_train.iloc[:,3:], df_train['G_2080'], df_train["unique_chemcomp"]
+X_train, y_train, group_train = df_train.iloc[:,3:], df_train['G_2080'], df_train["unique_chemcomp"]
 
 df_test = pd.read_csv('data/test.csv')
-X_test, y_test, group = df_test.iloc[:,3:], df_test['G_2080'], df_test["unique_chemcomp"]
+X_test, y_test, group_test = df_test.iloc[:,3:], df_test['G_2080'], df_test["unique_chemcomp"]
 
 # %%
+# parameters taken from data/hyperparameters.txt
 params = {
     'objective':'reg:squarederror',
     'n_estimators': 1500,
@@ -88,7 +85,7 @@ MAE.append(mae_test)
 plt.plot(frac,RMSE)
 plt.xlabel("Fraction of the initial training set")
 plt.ylabel("RMSE on the same test size (kJ/mol)")
-plt.savefig("training_curve.pdf", dpi=440)
+plt.savefig("plot/training_curve.pdf", dpi=440)
 plt.show()
 
 # %%
