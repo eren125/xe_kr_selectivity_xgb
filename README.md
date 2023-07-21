@@ -29,3 +29,9 @@ Some visualizations of the relationships between descriptors can be found in *5_
 ## Feature exploration
 
 *99_feature_test_cv.py* allows exploring different combinations of features to find the best combination. The different models are tested using a 5-fold cross validation on the training set *data/train_all.csv*.
+
+## Paper
+
+A preprint version of this work can be found at:
+
+https://chemrxiv.org/engage/chemrxiv/article-details/64ba6061b053dad33aa3e1c8
