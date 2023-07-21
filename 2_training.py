@@ -6,7 +6,6 @@ import xgboost as xgb
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score
 import pickle
-from xgboost import plot_importance
 
 def rmse(a,b):
     return np.sqrt( np.mean ((a-b)**2) )

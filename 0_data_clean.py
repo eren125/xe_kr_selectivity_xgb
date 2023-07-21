@@ -232,4 +232,7 @@ train_data = df_data.reset_index().iloc[train_idx]
 test_data = df_data.reset_index().iloc[test_idx]
 
 train_data[["Structures","unique_chemcomp"]+y_column+X_columns].to_csv("data/train.csv",index=True)
+train_data.to_csv("data/train_all.csv",index=True)
+
 test_data[["Structures","unique_chemcomp"]+y_column+X_columns].to_csv("data/test.csv",index=True)
+test_data.to_csv("data/test_all.csv",index=True)

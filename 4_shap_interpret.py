@@ -3,15 +3,8 @@ import pandas as pd
 import numpy as np 
 import xgboost as xgb
 import matplotlib.pyplot as plt
-import seaborn as sns
 import shap
-from sklearn.metrics import r2_score
 import pickle
-
-def rmse(a,b):
-    return np.sqrt( np.mean ((a-b)**2) )
-def mae(a,b):
-    return np.mean( abs( a-b ) )
 
 random_state = 123
 T = 298.0
