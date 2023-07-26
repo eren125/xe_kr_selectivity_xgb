@@ -16,7 +16,7 @@ random_state = 123
 
 # %%
 # import training data
-df_train = pd.read_csv('data/train_all.csv')
+df_train = pd.read_csv('data/train_all.csv',index_col=0)
 
 feature_names = [
 'G_0', 

@@ -7,7 +7,7 @@ from sklearn.model_selection import RandomizedSearchCV
 import xgboost as xgb
 
 # import training data
-df_train = pd.read_csv('data/train.csv')
+df_train = pd.read_csv('data/train.csv',index_col=0)
 X_train, y_train, group = df_train.iloc[:,3:], df_train['G_2080'], df_train["unique_chemcomp"]
 
 # %%

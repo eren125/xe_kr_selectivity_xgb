@@ -16,10 +16,10 @@ random_state = 123
 
 # %%
 # import training data
-df_train = pd.read_csv('data/train.csv')
+df_train = pd.read_csv('data/train.csv',index_col=0)
 X_train, y_train, group_train = df_train.iloc[:,3:], df_train['G_2080'], df_train["unique_chemcomp"]
 
-df_test = pd.read_csv('data/test.csv')
+df_test = pd.read_csv('data/test.csv',index_col=0)
 X_test, y_test, group_test = df_test.iloc[:,3:], df_test['G_2080'], df_test["unique_chemcomp"]
 
 # %%

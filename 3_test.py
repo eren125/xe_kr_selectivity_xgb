@@ -19,13 +19,13 @@ R = 8.31446261815324e-3
 
 # %%
 # import training data
-df_data = pd.read_csv('data/train.csv')
+df_data = pd.read_csv('data/train.csv',index_col=0)
 X_data, y_data, group = df_data.iloc[:,3:], df_data['G_2080'], df_data["unique_chemcomp"]
 
-df_train = pd.read_csv('data/train.csv')
+df_train = pd.read_csv('data/train.csv',index_col=0)
 X_train, y_train, group_train = df_train.iloc[:,3:], df_train['G_2080'], df_train["unique_chemcomp"]
 
-df_test = pd.read_csv('data/test.csv')
+df_test = pd.read_csv('data/test.csv',index_col=0)
 X_test, y_test, group_test = df_test.iloc[:,3:], df_test['G_2080'], df_test["unique_chemcomp"]
 
 # %%
